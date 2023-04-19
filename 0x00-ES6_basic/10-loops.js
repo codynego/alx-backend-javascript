@@ -6,3 +6,8 @@ export default function appendToEachArrayValue(array, appendString) {
 
   return array;
 }
+
+let arr = ['appended', 'fixed', 'displayed']
+let str = 'correctly-'
+
+console.log(appendToEachArrayValue(arr, str)
