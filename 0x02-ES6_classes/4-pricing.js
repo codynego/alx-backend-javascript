@@ -2,13 +2,12 @@ import Currency from './3-currency';
 
 export default class Pricing {
   constructor(amount, currency) {
-    if (typeof(amount) !== 'number') {
+    if (typeof (amount) !== 'number') {
       throw new TypeError('amount must be number');
     }
 
     this._amount = amount;
     this._currency = currency;
-
   }
 
   get amount() {
@@ -24,10 +23,14 @@ export default class Pricing {
   }
 
   set currency(currency) {
-    this.currency = currency
+    this.currency = currency;
   }
 
   displayFullPrice() {
     return `${this._amount} ${this.currency.displayFullCurrency()}`;
+  }
+
+  static convertPrice(amount, conversionRate) {
+    return amount * conversionRate;
   }
 }
